@@ -11,9 +11,7 @@ export default function FourOhFour() {
       <div className='Error404'>
         <img src="/public/404.svg" alt="Error 404" />
         <Link href="/">
-          <a>
-            <p>Volte para a Home</p>
-          </a>
+          <p>Volte para a Home</p>
         </Link>
       </div>
 

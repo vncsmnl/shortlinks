@@ -1,12 +1,12 @@
 // Pagina com os meus Links
 import { useState, useEffect } from 'react';
-import { FiLink, FiArrowLeft, FiTrash} from 'react-icons/fi'
+import { FiLink, FiArrowLeft, FiTrash } from 'react-icons/fi'
 import Link from 'next/link'
 import Modal from '../../components/Modal';
 
-import { getLinksSave, deleteLink} from '../../services/storeLinks';
+import { getLinksSave, deleteLink } from '../../services/storeLinks';
 
-export default function Links(){
+export default function Links() {
   const [myLinks, setMyLinks] = useState([]);
 
   const [data, setData] = useState({});
@@ -15,10 +15,10 @@ export default function Links(){
   const [emptyList, setEmptyList] = useState(false);
 
   useEffect(() => {
-    async function getLinks(){
+    async function getLinks() {
       const result = await getLinksSave('@encurtaLink')
 
-      if(result.length === 0){
+      if (result.length === 0) {
         //nossa lista esta vazia...
         setEmptyList(true);
       }
@@ -29,15 +29,15 @@ export default function Links(){
     getLinks();
   }, [])
 
-  function handleOpenLink(link){
+  function handleOpenLink(link) {
     setData(link);
     setShowModal(true);
   }
 
-  async function handleDelete(id){
+  async function handleDelete(id) {
     const result = await deleteLink(myLinks, id)
 
-    if(result.length === 0){
+    if (result.length === 0) {
       setEmptyList(true)
     }
 
@@ -45,43 +45,43 @@ export default function Links(){
 
   }
 
-  return(
+  return (
     <div className='links-container'>
 
       <div className='links-header'>
-        <Link href="/" passHref> 
-        <FiArrowLeft size={40} color='#FFF'/>
+        <Link href="/">
+          <FiArrowLeft size={40} color='#FFF' />
         </Link>
         <h1>Meus Links</h1>
       </div>
 
       {emptyList && (
-        <div className="links-item"> 
-        <h2 className="empty-text">
-          Sua lista está vazia!
-        </h2>
+        <div className="links-item">
+          <h2 className="empty-text">
+            Sua lista está vazia!
+          </h2>
         </div>
       )}
 
-      {myLinks.map( link => (
-      // eslint-disable-next-line react/jsx-key
+      {myLinks.map(link => (
+        // eslint-disable-next-line react/jsx-key
         <div key={link.id} className='links-item'>
-          <button className='link' onClick={ () => handleOpenLink(link)}>
-            <FiLink size={18} color='#FFF'/>
-              {link.long_url}
+          <button className='link' onClick={() => handleOpenLink(link)}>
+            <FiLink size={18} color='#FFF' />
+            {link.long_url}
           </button>
           <button className='link-delete' onClick={() => handleDelete(link.id)}>
-            <FiTrash size={24} color='red'/>
+            <FiTrash size={24} color='red' />
           </button>
-      </div>
+        </div>
       ))}
 
       {showModal && (
-      <Modal
-        closeModal={() => setShowModal(false)}
-        content={data}
-      />
-    )}
+        <Modal
+          closeModal={() => setShowModal(false)}
+          content={data}
+        />
+      )}
 
     </div>
   )

@@ -20,7 +20,7 @@ export default function Menu() {
                 <BsTwitter color='#fff' size={24} />
             </a>
             <div className='menu-item'>
-                <Link href="./Links" passHref>
+                <Link href="./Links">
                     <p>Meus Links</p>
                 </Link>
             </div>
