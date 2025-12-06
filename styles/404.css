@@ -1,4 +1,4 @@
-.Error404{
+.Error404 {
     width: 100%;
     height: 90vh;
     display: flex;
@@ -8,12 +8,12 @@
     animation: slideY 1.5s;
 }
 
-.Error404 img{
+.Error404 img {
     max-width: 1000px;
     margin: -210px;
 }
 
-.Error404 a{
+.Error404 a {
     color: #222d35;
     background-color: aliceblue;
     text-decoration: none;
@@ -21,4 +21,33 @@
     border-radius: 15px;
     font-weight: bold;
     margin-top: 15px;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .Error404 img {
+        max-width: 90%;
+        margin: -150px;
+    }
+
+    .Error404 a {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Error404 {
+        height: 80vh;
+    }
+
+    .Error404 img {
+        max-width: 95%;
+        margin: -100px;
+    }
+
+    .Error404 a {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
 }

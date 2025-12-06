@@ -1,4 +1,4 @@
-.menu{
+.menu {
     position: absolute;
     top: 20px;
     right: 2%;
@@ -6,17 +6,17 @@
     display: flex;
 }
 
-.menu a{
+.menu a {
     text-decoration: none;
 }
 
-.social{
+.social {
     margin-right: 10px;
     display: flex;
     align-items: center;
 }
 
-.menu-item{
+.menu-item {
     color: #222d35;
     background-color: aliceblue;
     padding: 12px 24px;
@@ -25,6 +25,38 @@
     cursor: pointer;
 }
 
-.menu-item:hover{
+.menu-item:hover {
     transform: scale(1.03);
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .menu {
+        top: 15px;
+        right: 3%;
+    }
+
+    .menu-item {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        top: 10px;
+        right: 5%;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .social {
+        margin-right: 0;
+        justify-content: flex-end;
+    }
+
+    .menu-item {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
 }

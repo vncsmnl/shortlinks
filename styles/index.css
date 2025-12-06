@@ -1,13 +1,13 @@
-button{
+button {
     cursor: pointer;
 }
 
-body{
+body {
     background-color: #222d35;
-    
+
 }
 
-.container-home{
+.container-home {
     width: 100%;
     height: 80vh;
     display: flex;
@@ -16,7 +16,7 @@ body{
     justify-content: center;
 }
 
-.logo{
+.logo {
     max-width: 1000px;
     margin: -230px;
     display: flex;
@@ -24,7 +24,7 @@ body{
     animation: slideY 1.5s;
 }
 
-.area-input{
+.area-input {
     width: 540px;
     display: flex;
     flex-direction: column;
@@ -33,16 +33,17 @@ body{
     justify-content: center;
 }
 
-@keyframes slideY{
-    from{
+@keyframes slideY {
+    from {
         transform: translateY(20px);
     }
-    to{
+
+    to {
         transform: translateY(0px);
     }
 }
 
-.area-input div{
+.area-input div {
     width: 100%;
     height: 40px;
     background-color: rgba(204, 236, 233, 0.1);
@@ -52,12 +53,12 @@ body{
     justify-content: center;
 }
 
-.area-input svg{
+.area-input svg {
     margin: 0 8px;
     background: transparent;
 }
 
-.area-input input{
+.area-input input {
     width: 100%;
     background: transparent;
     border: 0;
@@ -67,11 +68,11 @@ body{
     font-size: 15;
 }
 
-.area-input input::placeholder{
+.area-input input::placeholder {
     color: aliceblue;
 }
 
-.area-input button{
+.area-input button {
     background-color: #9CDCD6;
     width: 100%;
     height: 40px;
@@ -85,7 +86,7 @@ body{
     box-shadow: 5px 5px 5px 0px rgba(111, 111, 111, 0.2);
 }
 
-.area-input button:hover{
+.area-input button:hover {
     transform: scale(1.03);
 }
 
@@ -98,4 +99,43 @@ body{
     text-align: center;
     margin-bottom: 10px;
     font-size: 12px;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 90%;
+        margin: -150px;
+    }
+
+    .area-input {
+        width: 90%;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-home {
+        height: 70vh;
+    }
+
+    .logo {
+        max-width: 95%;
+        margin: -100px;
+    }
+
+    .area-input {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .area-input button {
+        font-size: 14px;
+        height: 38px;
+    }
+
+    .footer {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
 }

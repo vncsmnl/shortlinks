@@ -1,23 +1,23 @@
-.links-container{
+.links-container {
     max-width: 1100px;
     margin: 40px auto 0 auto;
 }
 
-.links-header{
+.links-header {
     display: flex;
     flex-direction: row;
 }
 
-.links-header svg{
+.links-header svg {
     margin-right: 14px;
     cursor: pointer;
 }
 
-.links-header h1{
+.links-header h1 {
     color: aliceblue;
 }
 
-.links-item{
+.links-item {
     width: 700px;
     display: flex;
     align-items: center;
@@ -25,11 +25,11 @@
     margin-top: 8px;
 }
 
-.links-item:last-child{
+.links-item:last-child {
     margin-bottom: 18px;
 }
 
-.link{
+.link {
     border: 0;
     width: 100%;
     min-width: 80%;
@@ -47,17 +47,17 @@
     text-overflow: ellipsis;
 }
 
-.link svg{
+.link svg {
     margin-right: 14px;
     background: transparent;
 }
 
-.link-delete{
+.link-delete {
     border: 0;
     background: transparent;
 }
 
-.empty-text{
+.empty-text {
     border: 0;
     width: 100%;
     min-width: 80%;
@@ -70,4 +70,61 @@
     align-items: center;
     padding: 0 14px;
     color: aliceblue;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .links-container {
+        max-width: 95%;
+        padding: 0 20px;
+    }
+
+    .links-item {
+        width: 100%;
+    }
+
+    .link {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .links-container {
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 20px auto 0 auto;
+    }
+
+    .links-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .links-header h1 {
+        font-size: 22px;
+    }
+
+    .links-header svg {
+        margin-right: 10px;
+    }
+
+    .links-item {
+        width: 100%;
+        flex-direction: row;
+        margin-top: 6px;
+    }
+
+    .link {
+        font-size: 13px;
+        padding: 0 8px;
+        height: 38px;
+        margin-right: 8px;
+    }
+
+    .empty-text {
+        font-size: 14px;
+        padding: 0 10px;
+        height: 38px;
+    }
 }
